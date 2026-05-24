@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load django_bootstrap5 %}
+
+{% block content %}
+    <div>
+        <a href="{% url 'main:products' %}" class="btn btn-outline-secondary mb-3">Назад</a>
+        <h1>{{ title }}</h1>
+        <hr>
+        <form method="post" class="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn" style="background: #FFFFFF;">Сохранить</button>
+        </form>
+    </div>
+{% endblock %}
